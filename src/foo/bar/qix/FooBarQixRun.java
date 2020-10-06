@@ -12,7 +12,7 @@ public class FooBarQixRun {
 	public static void main(String[] args) {
 		int nb = 1;
 		while(nb <= 100) {
-			System.out.println(nb + " " + valueNumber(nb) );
+			System.out.println(valueNumber(nb) );
 			nb++;
 		}
 
@@ -24,32 +24,32 @@ public class FooBarQixRun {
 	}
 	
 	private static String divisibleNumber(int nb) {
-		String str = "";
+		StringBuilder str = new StringBuilder("");
 		if(nb % 3 == 0) {
-			str = FOO;
+			str.append(FOO);
 		}
 		if(nb % 5 == 0) {
-			str = str + BAR;
+			str.append(BAR);
 		}
-		return str;
+		return str.toString();
 	}
 	
 	private static String containNumber(int nb) {
 		String strNb = String.valueOf(nb);
 		char[] chs = strNb.toCharArray();
-		String str = "";
+		StringBuilder str = new StringBuilder("");
 		for(char ch : chs) {
 			if(ch == FOO_3) {
-				str = str  + FOO;
+				str.append(FOO);
 			}
 			if(ch == BAR_5) {
-				str = str + BAR;
+				str.append(BAR);
 			}
 			if(ch == QIX_7) {
-				str = str + QIX;
+				str.append(QIX);
 			}
 		}
-		return str;
+		return str.toString();
 	}
 
 }
